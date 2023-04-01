@@ -1,75 +1,26 @@
-study git is very importance!! switch,switch,switch,switch
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-hello.txt[+] [unix] (07:59 01/01/1970)                                   1,1 Top
--- INSERT --
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-hello.txt[+] [unix] (07:59 01/01/1970)                                   1,1 Top
--- INSERT --
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-study git is very importance!!
-:q
+package com.ajian.proxy.service;
 
-:wq
+
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+
+/**
+ *
+ */
+public class OrderServiceImplProxy implements InvocationHandler {
+    private Object target;
+    public OrderServiceImplProxy(Object target){
+        this.target = target;
+    }
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        //执行目标方法前 增强代码
+        long start = System.currentTimeMillis();
+        Object value = method.invoke(target, args);
+        long end = System.currentTimeMillis();
+        System.out.println(method.getName()+"方法耗时"+(end-start)+"毫秒");
+        return value;
+    }
+}
 

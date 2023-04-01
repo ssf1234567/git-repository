@@ -12,6 +12,7 @@ public class OrderServiceImplProxy implements InvocationHandler {
     private Object target;
     private Object master;
     private Object hot-fix2;
+    private Object "远程仓库修改了一行代码";
     public OrderServiceImplProxy(Object target){
         this.target = target;
     }

@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
  */
 public class OrderServiceImplProxy implements InvocationHandler {
     private Object target;
+    private Object hot-fix2;
     public OrderServiceImplProxy(Object target){
         this.target = target;
     }
